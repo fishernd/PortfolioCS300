@@ -684,6 +684,8 @@ void Driver::loadCourses() {
     }
     // Make sure to close resources after use
     infs.close();
+    if (checkPrerequisites() == false)
+        throw runtime_error("Prerequisite course check failed");
     cout << "\nLoaded " << num << " courses" << endl;
 }
 
